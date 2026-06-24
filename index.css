@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-google-blue: #4285F4;
+  --color-google-red: #EA4335;
+  --color-google-yellow: #FBBC05;
+  --color-google-green: #34A853;
+}
+
+@layer utilities {
+  .google-gradient-text {
+    background: linear-gradient(135deg, #4285F4 0%, #EA4335 30%, #FBBC05 60%, #34A853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .google-gradient-border {
+    border-image: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853) 1;
+  }
+
+  /* Geometric Balance Theme Classes */
+  .geometric-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    background: #ffffff;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .geometric-card:hover {
+    transform: translateY(-2px);
+    border-color: #4285F4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .geometric-skill-box {
+    border: 2px solid #f1f3f4;
+    border-radius: 12px;
+    text-align: center;
+    padding: 16px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+  }
+  
+  .geometric-skill-box:hover {
+    border-color: #4285F4;
+    background: #fdfdfd;
+    transform: scale(1.02);
+  }
+
+  .geometric-btn-action {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .footer-flash-animate {
+    animation: flash-animation 2.5s infinite;
+  }
+
+  @keyframes flash-animation {
+    0%, 100% {
+      opacity: 1;
+      color: #ffbbc05;
+    }
+    50% {
+      opacity: 0.6;
+      color: #4285F4;
+    }
+  }
+
+  /* Fade-in and slide-up classes for scroll entry animations */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
